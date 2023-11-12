@@ -26,7 +26,7 @@ function SignUp(){
     try {
       //console.log(formData)
       console.log(formData)
-      const res= await axios.post('http://localhost:4000/server/auth/signup', {formData});
+      const res= await axios.post('https://child-fund.onrender.com/server/auth/signup', {formData});
       console.log(res)
       navigate('/')
       

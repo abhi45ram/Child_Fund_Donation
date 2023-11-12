@@ -76,7 +76,7 @@ function Main(){
     const navigate=useNavigate()
     useEffect(()=>{
      async function fetchChildren(){
-     const res=await axios.get('http://localhost:4000/server/child')
+     const res=await axios.get('https://child-fund.onrender.com/server/child')
      let array=res.data.data;
      const FilterByLocation=(array)=>{
       if(location!=="")

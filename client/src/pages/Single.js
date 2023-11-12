@@ -19,7 +19,7 @@ function Single(){
   const [amount,setAmount]=useState(30);
   useEffect(()=>{
     async function fetchChildren(){
-    const res=await axios.get(`http://localhost:4000/server/child/${loc2}`)
+    const res=await axios.get(`https://child-fund.onrender.com/server/child/${loc2}`)
     setChild(res.data);
    //console.log(res.data.data)
     }
@@ -27,8 +27,8 @@ function Single(){
   }, []);
 
   const handleCheckout = async () => {
-    await axios.post(`http://localhost:4000/server/donation`,{userId:user,childId:loc2})
-    const res = await axios.post(`http://localhost:4000/server/stripe/create-checkout-session`, { amount: amount});
+    await axios.post(`https://child-fund.onrender.com/server/donation`,{userId:user,childId:loc2})
+    const res = await axios.post(`https://child-fund.onrender.com/server/stripe/create-checkout-session`, { amount: amount});
     if (res.data.url) {
       window.location.href = res.data.url;
     } else {

@@ -11,7 +11,7 @@ function CheckOutSuccess(){
    useEffect(()=>{
      async function sendMail()
      {
-        await axios.post('http://localhost:4000/server/mail/sendMail',{userId:user})
+        await axios.post('https://child-fund.onrender.com/server/mail/sendMail',{userId:user})
      }
      sendMail()
    },[])
